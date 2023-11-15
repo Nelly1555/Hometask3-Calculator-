@@ -2,6 +2,7 @@ package parameterized;
 
 import exceptions.OperationWasNotValidated;
 import exceptions.StringWasNotValidated;
+import io.qameta.allure.*;
 import model.Calculations;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -14,6 +15,9 @@ import static utils.Validator.validateInputString;
 /**
  * Набор тестов с Data Provider для класса Validator.
  */
+@Owner("Нелли Миляева")
+@Epic("Validator")
+@Feature("Parameterized tests")
 public class ValidatorDataProvider {
 
     /**
@@ -53,52 +57,53 @@ public class ValidatorDataProvider {
         };
     }
 
-    /**
-     * Позитивная проверка введения в консоль целого числа.
-     */
-    @Test(dataProvider = "getTestAndExpectedDataForNumber")
+    @Test(dataProvider = "getTestAndExpectedDataForNumber",
+            description = "Позитивная проверка введения в консоль целого числа.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль целого числа.")
+    @Description("Позитивный тест на введение в консоль целого числа.")
     public void testValidateInputIntegerPositive(String number, String expectedResult) {
         int actualResult = calculations.putNumber(validateInputString(number));
         assertEquals(actualResult, Integer. parseInt(expectedResult));
     }
 
-    /**
-     * Негативная проверка введения в консоль дробного числа
-     * с выводом исключения StringWasNotValidated.
-     */
-    @Test(expectedExceptions = StringWasNotValidated.class)
+    @Test(expectedExceptions = StringWasNotValidated.class,
+            description = "Негативная проверка введения в консоль дробного числа с выводом исключения StringWasNotValidated.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль дробного числа.")
+    @Description("Негативный тест на введение в консоль дробного числа с выводом исключения StringWasNotValidated.")
     public void testValidateInputDoubleNegative() {
         String number = "33.3";
         calculations.putNumber(validateInputString(number));
     }
 
-    /**
-     * Негативная проверка введения в консоль текста
-     * с выводом исключения StringWasNotValidated.
-     */
-    @Test(expectedExceptions = StringWasNotValidated.class)
+    @Test(expectedExceptions = StringWasNotValidated.class,
+            description = "Негативная проверка введения в консоль текста с выводом исключения StringWasNotValidated.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль текста вместо целого числа.")
+    @Description("Негативный тест на введение в консоль текста вместо целого числа с выводом исключения StringWasNotValidated.")
     public void testValidateInputWordNegative() {
         String number = "test";
         calculations.putNumber(validateInputString(number));
     }
 
-    /**
-     * Позитивная проверка введения в консоль знака операции.
-     */
-    @Test(dataProvider = "getTestAndExpectedDataForOperation")
+    @Test(dataProvider = "getTestAndExpectedDataForOperation",
+            description = "Позитивная проверка введения в консоль знака операции.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль знака операции.")
+    @Description("Позитивный тест на введение в консоль знака операции.")
     public void testValidateInputPlusInOperationPositive(String operation, String expectedResult) {
         int actualResult = calculations.putOperation(validateInputOperationSign(operation));
         assertEquals(actualResult, expectedResult.charAt(0));
     }
 
-    /**
-     * Негативная проверка введения в консоль буквы вместо знака операции
-     * с выводом исключения OperationWasNotValidated.
-     */
-    @Test(expectedExceptions = OperationWasNotValidated.class)
+    @Test(expectedExceptions = OperationWasNotValidated.class,
+            description = "Негативная проверка введения в консоль буквы вместо знака операции с выводом исключения OperationWasNotValidated.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль буквы вместо знака операции.")
+    @Description("Негативный тест на введение в консоль буквы вместо знака операции с выводом исключения OperationWasNotValidated.")
     public void testValidateInputLetterInOperationNegative() {
         String operation = "h";
         calculations.putNumber(validateInputOperationSign(operation));
     }
-
 }

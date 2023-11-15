@@ -1,5 +1,6 @@
 package parameterized;
 
+import io.qameta.allure.*;
 import model.Calculations;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -9,6 +10,9 @@ import static org.testng.Assert.assertEquals;
 /**
  * Набор тестов с Data Provider для класса Calculations.
  */
+@Owner("Нелли Миляева")
+@Epic("Calculator")
+@Feature("Parameterized tests")
 public class CalculatorDataProvider {
 
     /**
@@ -79,10 +83,11 @@ public class CalculatorDataProvider {
         };
     }
 
-    /**
-     * Позитивная проверка метода сложения.
-     */
-    @Test(dataProvider = "getTestAndExpectedDataForAdd")
+    @Test(dataProvider = "getTestAndExpectedDataForAdd",
+            description = "Позитивная проверка метода сложения.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода сложения с Data Provider.")
+    @Description("Позитивный тест на проверку метода сложения с Data Provider.")
     public void testAddTwoIntegersPositive(String firstString, String secondString, String expectedResult) {
         int num1 = calculations.putNumber (firstString);
         int num2 = calculations.putNumber (secondString);
@@ -90,10 +95,11 @@ public class CalculatorDataProvider {
         assertEquals(actualResult, Integer. parseInt(expectedResult), "Incorrect addition result.");
     }
 
-    /**
-     * Позитивная проверка метода вычитания.
-     */
-    @Test(dataProvider = "getTestAndExpectedDataForSubtract")
+    @Test(dataProvider = "getTestAndExpectedDataForSubtract",
+            description = "Позитивная проверка метода вычитания.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода вычитания с Data Provider.")
+    @Description("Позитивный тест на проверку метода вычитания с Data Provider.")
     public void testSubtractTwoIntegersPositive(String firstString, String secondString, String expectedResult) {
         int num1 = calculations.putNumber(firstString);
         int num2 = calculations.putNumber(secondString);
@@ -101,10 +107,11 @@ public class CalculatorDataProvider {
         assertEquals(actualResult, Integer. parseInt(expectedResult), "Incorrect subtract result.");
     }
 
-    /**
-     * Позитивная проверка метода умножения.
-     */
-    @Test(dataProvider = "getTestAndExpectedDataForMultiply")
+    @Test(dataProvider = "getTestAndExpectedDataForMultiply",
+            description = "Позитивная проверка метода умножения.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода умножения с Data Provider.")
+    @Description("Позитивный тест на проверку метода умножения с Data Provider.")
     public void testMultiplyTwoIntegersPositive(String firstString, String secondString, String expectedResult) {
         int num1 = calculations.putNumber(firstString);
         int num2 = calculations.putNumber(secondString);
@@ -112,10 +119,11 @@ public class CalculatorDataProvider {
         assertEquals(actualResult, Integer. parseInt(expectedResult), "Incorrect multiply result.");
     }
 
-    /**
-     * Позитивная проверка метода деления.
-     */
-    @Test(dataProvider = "getTestAndExpectedDataForDivide")
+    @Test(dataProvider = "getTestAndExpectedDataForDivide",
+            description = "Позитивная проверка метода деления.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода деления с Data Provider.")
+    @Description("Позитивный тест на проверку метода деления с Data Provider.")
     public void testDivideIntegersPositive(String firstString, String secondString, String expectedResult) {
         int num1 = calculations.putNumber(firstString);
         int num2 = calculations.putNumber(secondString);
@@ -123,10 +131,11 @@ public class CalculatorDataProvider {
         assertEquals(actualResult, Integer. parseInt(expectedResult), "Incorrect divide result.");
     }
 
-    /**
-     * Негативная проверка деления на ноль с выводом исключения ArithmeticException.
-     */
-    @Test(expectedExceptions = ArithmeticException.class)
+    @Test(expectedExceptions = ArithmeticException.class,
+            description = "Негативная проверка деления на ноль с выводом исключения ArithmeticException.")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Проверка метода деления на ноль.")
+    @Description("Негативный тест на проверку метода деления на ноль с выводом исключения ArithmeticException.")
     public void testDivideIntegerAndZeroNegative() {
         int num1 = calculations.putNumber("900");
         int num2 = calculations.putNumber("0");

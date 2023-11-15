@@ -2,6 +2,7 @@ package single;
 
 import exceptions.OperationWasNotValidated;
 import exceptions.StringWasNotValidated;
+import io.qameta.allure.*;
 import model.Calculations;
 import org.testng.annotations.Test;
 import utils.Validator;
@@ -12,6 +13,9 @@ import static utils.Validator.validateInputString;
 /**
  * Набор тестов для проверки класса Validator.
  */
+@Owner("Нелли Миляева")
+@Epic("Validator")
+@Feature("Single tests")
 public class ValidatorTest {
 
     /**
@@ -24,10 +28,11 @@ public class ValidatorTest {
      */
     private Calculations calculations = new Calculations();
 
-    /**
-     * Позитивная проверка введения в консоль целого числа.
-     */
-    @Test
+
+    @Test(description = "Позитивная проверка введения в консоль целого числа.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль целого числа.")
+    @Description("Позитивный тест на введение в консоль целого числа.")
     public void testValidateInputIntegerPositive() {
         String number = "333";
         int actualResult = calculations.putNumber(validateInputString(number));
@@ -35,10 +40,10 @@ public class ValidatorTest {
         assertEquals(actualResult, expectedResult);
     }
 
-    /**
-     * Позитивная проверка введения в консоль отрицательного целого числа.
-     */
-    @Test
+    @Test(description = "Позитивная проверка введения в консоль отрицательного целого числа.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль отрицательного целого числа.")
+    @Description("Позитивный тест на введение в консоль отрицательного целого числа.")
     public void testValidateInputNegativeIntegerPositive() {
         String number = "-555";
         int actualResult = calculations.putNumber(validateInputString(number));
@@ -46,10 +51,10 @@ public class ValidatorTest {
         assertEquals(actualResult, expectedResult);
     }
 
-    /**
-     * Позитивная проверка введения в консоль нуля.
-     */
-    @Test
+    @Test(description = "Позитивная проверка введения в консоль нуля.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль нуля.")
+    @Description("Позитивный тест на введение в консоль нуля.")
     public void testValidateInputZeroPositive() {
         String number = "0";
         int actualResult = calculations.putNumber(validateInputString(number));
@@ -57,30 +62,30 @@ public class ValidatorTest {
         assertEquals(actualResult, expectedResult);
     }
 
-    /**
-     * Негативная проверка введения в консоль дробного числа
-     * с выводом исключения StringWasNotValidated.
-     */
-    @Test(expectedExceptions = StringWasNotValidated.class)
+    @Test(expectedExceptions = StringWasNotValidated.class,
+            description = "Негативная проверка введения в консоль дробного числа с выводом исключения StringWasNotValidated.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль дробного числа.")
+    @Description("Негативный тест на введение в консоль дробного числа с выводом исключения StringWasNotValidated.")
     public void testValidateInputDoubleNegative() {
         String number = "33.3";
         calculations.putNumber(validateInputString(number));
     }
 
-    /**
-     * Негативная проверка введения в консоль текста
-     * с выводом исключения StringWasNotValidated.
-     */
-    @Test(expectedExceptions = StringWasNotValidated.class)
+    @Test(expectedExceptions = StringWasNotValidated.class,
+            description = "Негативная проверка введения в консоль текста с выводом исключения StringWasNotValidated.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль текста.")
+    @Description("Негативный тест на введение в консоль текста с выводом исключения StringWasNotValidated.")
     public void testValidateInputWordNegative() {
         String number = "test";
         calculations.putNumber(validateInputString(number));
     }
 
-    /**
-     * Позитивная проверка введения в консоль знака операции "плюс".
-     */
-    @Test
+    @Test(description = "Позитивная проверка введения в консоль знака операции \"плюс\".")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль знака операции \"плюс\".")
+    @Description("Позитивный тест на введение в консоль знака операции \"плюс\".")
     public void testValidateInputPlusInOperationPositive() {
         String operation = "+";
         int actualResult = calculations.putOperation(validateInputOperationSign(operation));
@@ -88,10 +93,10 @@ public class ValidatorTest {
         assertEquals(actualResult, expectedResult);
     }
 
-    /**
-     * Позитивная проверка введения в консоль знака операции "минус".
-     */
-    @Test
+    @Test(description = "Позитивная проверка введения в консоль знака операции \"минус\".")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль знака операции \"минус\".")
+    @Description("Позитивный тест на введение в консоль знака операции \"минус\".")
     public void testValidateInputMinusInOperationPositive() {
         String operation = "-";
         int actualResult = calculations.putOperation(validateInputOperationSign(operation));
@@ -99,10 +104,10 @@ public class ValidatorTest {
         assertEquals(actualResult, expectedResult);
     }
 
-    /**
-     * Позитивная проверка введения в консоль знака операции "умножение".
-     */
-    @Test
+    @Test(description = "Позитивная проверка введения в консоль знака операции \"умножение\".")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль знака операции \"умножение\".")
+    @Description("Позитивный тест на введение в консоль знака операции \"умножение\".")
     public void testValidateInputAsteriskInOperationPositive() {
         String operation = "*";
         int actualResult = calculations.putOperation(validateInputOperationSign(operation));
@@ -110,10 +115,10 @@ public class ValidatorTest {
         assertEquals(actualResult, expectedResult);
     }
 
-    /**
-     * Позитивная проверка введения в консоль знака операции "деление".
-     */
-    @Test
+    @Test(description = "Позитивная проверка введения в консоль знака операции \"деление\".")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль знака операции \"деление\".")
+    @Description("Позитивный тест на введение в консоль знака операции \"деление\".")
     public void testValidateInputDivisionSignInOperationPositive() {
         String operation = "/";
         int actualResult = calculations.putOperation(validateInputOperationSign(operation));
@@ -121,11 +126,11 @@ public class ValidatorTest {
         assertEquals(actualResult, expectedResult);
     }
 
-    /**
-     * Негативная проверка введения в консоль буквы вместо знака операции
-     * с выводом исключения OperationWasNotValidated.
-     */
-    @Test(expectedExceptions = OperationWasNotValidated.class)
+    @Test(expectedExceptions = OperationWasNotValidated.class,
+            description = "Негативная проверка введения в консоль буквы вместо знака операции с выводом исключения OperationWasNotValidated.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка введения в консоль буквы вместо знака операции.")
+    @Description("Негативный тест на введение в консоль буквы вместо знака операции с выводом исключения OperationWasNotValidated.")
     public void testValidateInputLetterInOperationNegative() {
         String operation = "h";
         calculations.putNumber(validateInputOperationSign(operation));
