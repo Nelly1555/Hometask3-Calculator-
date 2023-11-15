@@ -1,16 +1,17 @@
 package single;
 
-import exceptions.OperationWasNotValidated;
-import exceptions.StringWasNotValidated;
+import io.qameta.allure.*;
 import model.Calculations;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.fail;
 
 /**
  * Набор тестов для проверки класса Calculations.
  */
+@Owner("Нелли Миляева")
+@Epic("Calculator")
+@Feature("Single tests")
 public class CalculatorRunnerTest {
 
     /**
@@ -18,10 +19,10 @@ public class CalculatorRunnerTest {
      */
     private Calculations calculations = new Calculations();
 
-    /**
-     * Позитивная проверка сложения двух целых чисел.
-     */
-    @Test
+    @Test(description = "Позитивная проверка сложения двух целых чисел.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода сложения двух целых чисел.")
+    @Description("Позитивный тест на проверку метода сложения двух целых чисел.")
     public void testAddTwoIntegersPositive() {
         int num1 = calculations.putNumber("111");
         int num2 = calculations.putNumber("222");
@@ -30,10 +31,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect addition result.");
     }
 
-    /**
-     * Позитивная проверка сложения целого числа и нуля.
-     */
-    @Test
+    @Test(description = "Позитивная проверка сложения целого числа и нуля.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода сложения целого числа и нуля.")
+    @Description("Позитивный тест на проверку метода сложения целого числа и нуля.")
     public void testAddIntegerPlusZeroPositive() {
         int num1 = calculations.putNumber("100");
         int num2 = calculations.putNumber("0");
@@ -42,10 +43,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect addition result.");
     }
 
-    /**
-     * Позитивная проверка сложения нуля и целого числа.
-     */
-    @Test
+    @Test(description = "Позитивная проверка сложения нуля и целого числа.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода сложения нуля и целого числа.")
+    @Description("Позитивный тест на проверку метода сложения нуля и целого числа.")
     public void testAddZeroPlusIntegerPositive() {
         int num1 = calculations.putNumber("0");
         int num2 = calculations.putNumber("700");
@@ -54,10 +55,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect addition result.");
     }
 
-    /**
-     * Позитивная проверка сложения целого числа и отрицательного целого числа.
-     */
-    @Test
+    @Test(description = "Позитивная проверка сложения целого числа и отрицательного целого числа.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода сложения целого числа и отрицательного целого числа.")
+    @Description("Позитивный тест на проверку метода сложения целого числа и отрицательного целого числа.")
     public void testAddIntegerPlusNegativeIntegerPositive() {
         int num1 = calculations.putNumber("100");
         int num2 = calculations.putNumber("-50");
@@ -66,10 +67,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect addition result.");
     }
 
-    /**
-     * Позитивная проверка сложения отрицательного целого числа и целого числа.
-     */
-    @Test
+    @Test(description = "Позитивная проверка сложения отрицательного целого числа и целого числа.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода сложения отрицательного целого числа и целого числа.")
+    @Description("Позитивный тест на проверку метода сложения отрицательного целого числа и целого числа.")
     public void testAddNegativeIntegerPlusIntegerPositive() {
         int num1 = calculations.putNumber("-100");
         int num2 = calculations.putNumber("550");
@@ -78,10 +79,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect addition result.");
     }
 
-    /**
-     * Позитивная проверка сложения двух отрицательных целых чисел.
-     */
-    @Test
+    @Test(description = "Позитивная проверка сложения двух отрицательных целых чисел.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода сложения двух отрицательных целых чисел.")
+    @Description("Позитивный тест на проверку метода сложения двух отрицательных целых чисел.")
     public void testAddTwoNegativeIntegersPositive() {
         int num1 = calculations.putNumber("-555");
         int num2 = calculations.putNumber("-333");
@@ -90,10 +91,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect addition result.");
     }
 
-    /**
-     * Позитивная проверка вычитания двух целых чисел.
-     */
-    @Test
+    @Test(description = "Позитивная проверка вычитания двух целых чисел.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода вычитания двух целых чисел.")
+    @Description("Позитивный тест на проверку метода вычитания двух целых чисел.")
     public void testSubtractTwoIntegersPositive() {
         int num1 = calculations.putNumber("555");
         int num2 = calculations.putNumber("333");
@@ -102,10 +103,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect subtract result.");
     }
 
-    /**
-     * Позитивная проверка вычитания отрицательного целого числа из целого числа.
-     */
-    @Test
+    @Test(description = "Позитивная проверка вычитания отрицательного целого числа из целого числа.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода вычитания отрицательного целого числа из целого числа.")
+    @Description("Позитивный тест на проверку метода вычитания отрицательного целого числа из целого числа.")
     public void testSubtractIntegerAndNegativeIntegerPositive() {
         int num1 = calculations.putNumber("555");
         int num2 = calculations.putNumber("-333");
@@ -114,10 +115,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect subtract result.");
     }
 
-    /**
-     * Позитивная проверка вычитания целого числа из отрицательного целого числа.
-     */
-    @Test
+    @Test(description = "Позитивная проверка вычитания целого числа из отрицательного целого числа.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода вычитания целого числа из отрицательного целого числа.")
+    @Description("Позитивный тест на проверку метода вычитания целого числа из отрицательного целого числа.")
     public void testSubtractNegativeIntegerAndIntegerPositive() {
         int num1 = calculations.putNumber("-555");
         int num2 = calculations.putNumber("333");
@@ -126,10 +127,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect subtract result.");
     }
 
-    /**
-     * Позитивная проверка вычитания отрицательных целых чисел.
-     */
-    @Test
+    @Test(description = "Позитивная проверка вычитания отрицательных целых чисел.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода вычитания отрицательных целых чисел.")
+    @Description("Позитивный тест на проверку метода вычитания отрицательных целых чисел.")
     public void testSubtractNegativeIntegersPositive() {
         int num1 = calculations.putNumber("-555");
         int num2 = calculations.putNumber("-333");
@@ -138,10 +139,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect subtract result.");
     }
 
-    /**
-     * Позитивная проверка вычитания нуля из целого числа.
-     */
-    @Test
+    @Test(description = "Позитивная проверка вычитания нуля из целого числа.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода вычитания нуля из целого числа.")
+    @Description("Позитивный тест на проверку метода вычитания нуля из целого числа.")
     public void testSubtractIntegerAndZeroPositive() {
         int num1 = calculations.putNumber("777");
         int num2 = calculations.putNumber("0");
@@ -150,10 +151,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect subtract result.");
     }
 
-    /**
-     * Позитивная проверка вычитания целого числа из нуля.
-     */
-    @Test
+    @Test(description = "Позитивная проверка вычитания целого числа из нуля.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода вычитания целого числа из нуля.")
+    @Description("Позитивный тест на проверку метода вычитания целого числа из нуля.")
     public void testSubtractZeroAndIntegerPositive() {
         int num1 = calculations.putNumber("0");
         int num2 = calculations.putNumber("999");
@@ -162,10 +163,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect subtract result.");
     }
 
-    /**
-     * Позитивная проверка умножения целых чисел.
-     */
-    @Test
+    @Test(description = "Позитивная проверка умножения целых чисел.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода умножения целых чисел.")
+    @Description("Позитивный тест на проверку метода умножения целых чисел.")
     public void testMultiplyIntegersPositive() {
         int num1 = calculations.putNumber("50");
         int num2 = calculations.putNumber("300");
@@ -174,10 +175,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect multiply result.");
     }
 
-    /**
-     * Позитивная проверка умножения целого числа на отрицательное целого число.
-     */
-    @Test
+    @Test(description = "Позитивная проверка умножения целого числа на отрицательное целого число.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода умножения целого числа на отрицательное целого число.")
+    @Description("Позитивный тест на проверку метода умножения целого числа на отрицательное целого число.")
     public void testMultiplyIntegerAndNegativeIntegerPositive() {
         int num1 = calculations.putNumber("50");
         int num2 = calculations.putNumber("-300");
@@ -186,10 +187,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect multiply result.");
     }
 
-    /**
-     * Позитивная проверка умножения отрицательного целого числа на целое число.
-     */
-    @Test
+    @Test(description = "Позитивная проверка умножения отрицательного целого числа на целое число.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода умножения отрицательного целого числа на целое число.")
+    @Description("Позитивный тест на проверку метода умножения отрицательного целого числа на целое число.")
     public void testMultiplyNegativeIntegerAndIntegerPositive() {
         int num1 = calculations.putNumber("-900");
         int num2 = calculations.putNumber("3");
@@ -198,10 +199,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect multiply result.");
     }
 
-    /**
-     * Позитивная проверка умножения отрицательных чисел.
-     */
-    @Test
+    @Test(description = "Позитивная проверка умножения отрицательных чисел.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода умножения отрицательных чисел.")
+    @Description("Позитивный тест на проверку метода умножения отрицательных чисел.")
     public void testMultiplyNegativeIntegersPositive() {
         int num1 = calculations.putNumber("-900");
         int num2 = calculations.putNumber("-3");
@@ -210,10 +211,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect multiply result.");
     }
 
-    /**
-     * Позитивная проверка умножения целого числа на ноль.
-     */
-    @Test
+    @Test(description = "Позитивная проверка умножения целого числа на ноль.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода умножения целого числа на ноль.")
+    @Description("Позитивный тест на проверку метода умножения целого числа на ноль.")
     public void testMultiplyIntegerAndZeroPositive() {
         int num1 = calculations.putNumber("600");
         int num2 = calculations.putNumber("0");
@@ -222,10 +223,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect multiply result.");
     }
 
-    /**
-     * Позитивная проверка умножения нуля на целое число.
-     */
-    @Test
+    @Test(description = "Позитивная проверка умножения нуля на целое число.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода умножения нуля на целое число.")
+    @Description("Позитивный тест на проверку метода умножения нуля на целое число.")
     public void testMultiplyZeroAndIntegerPositive() {
         int num1 = calculations.putNumber("0");
         int num2 = calculations.putNumber("1800");
@@ -234,10 +235,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect multiply result.");
     }
 
-    /**
-     * Позитивная проверка деления целых чисел.
-     */
-    @Test
+    @Test(description = "Позитивная проверка деления целых чисел.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода деления целых чисел.")
+    @Description("Позитивный тест на проверку метода деления целых чисел.")
     public void testDivideIntegersPositive() {
         int num1 = calculations.putNumber("180");
         int num2 = calculations.putNumber("9");
@@ -246,10 +247,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect divide result.");
     }
 
-    /**
-     * Позитивная проверка деления целого числа на отрицательное целое число.
-     */
-    @Test
+    @Test(description = "Позитивная проверка деления целого числа на отрицательное целое число.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода деления целого числа на отрицательное целое число.")
+    @Description("Позитивный тест на проверку метода деления целого числа на отрицательное целое число.")
     public void testDivideIntegerAndNegativeIntegerPositive() {
         int num1 = calculations.putNumber("180");
         int num2 = calculations.putNumber("-9");
@@ -258,10 +259,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect divide result.");
     }
 
-    /**
-     * Позитивная проверка деления отрицательного целого числа на целое число.
-     */
-    @Test
+    @Test(description = "Позитивная проверка деления отрицательного целого числа на целое число.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода деления отрицательного целого числа на целое число.")
+    @Description("Позитивный тест на проверку метода деления отрицательного целого числа на целое число.")
     public void testDivideNegativeIntegerAndIntegerPositive() {
         int num1 = calculations.putNumber("-180");
         int num2 = calculations.putNumber("9");
@@ -270,10 +271,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect divide result.");
     }
 
-    /**
-     * Позитивная проверка деления отрицательных чисел.
-     */
-    @Test
+    @Test(description = "Позитивная проверка деления отрицательных чисел.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода деления отрицательных чисел.")
+    @Description("Позитивный тест на проверку метода деления отрицательных чисел.")
     public void testDivideNegativeIntegersPositive() {
         int num1 = calculations.putNumber("-180");
         int num2 = calculations.putNumber("-9");
@@ -282,10 +283,10 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect divide result.");
     }
 
-    /**
-     * Позитивная проверка деления нуля на целое число.
-     */
-    @Test
+    @Test(description = "Позитивная проверка деления нуля на целое число.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Проверка метода деления нуля на целое число.")
+    @Description("Позитивный тест на проверку метода деления нуля на целое число.")
     public void testDivideZeroAndIntegerPositive() {
         int num1 = calculations.putNumber("0");
         int num2 = calculations.putNumber("900");
@@ -294,10 +295,11 @@ public class CalculatorRunnerTest {
         assertEquals(actualResult, expectedResult, "Incorrect divide result.");
     }
 
-    /**
-     * Негативная проверка деления на ноль с выводом исключения ArithmeticException.
-     */
-    @Test(expectedExceptions = ArithmeticException.class)
+    @Test(expectedExceptions = ArithmeticException.class,
+            description = "Негативная проверка деления на ноль с выводом исключения ArithmeticException.")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Проверка метода деления на ноль.")
+    @Description("Негативный тест на проверку метода деления на ноль с выводом исключения ArithmeticException.")
     public void testDivideIntegerAndZeroNegative() {
         int num1 = calculations.putNumber("900");
         int num2 = calculations.putNumber("0");
