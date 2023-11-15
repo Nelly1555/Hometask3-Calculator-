@@ -57,9 +57,9 @@
 
   - *Скриншоты с отчётом:*
 
-  !(https://raw.githubusercontent.com/Nelly1555/Hometask3-Calculator-/b26a5cd08873b7b061c4b20cbf21a159f3e9b33f/screenShots/MavenAllureFirst.jpg)
+  ![mavenAllure1](https://raw.githubusercontent.com/Nelly1555/Hometask3-Calculator-/b26a5cd08873b7b061c4b20cbf21a159f3e9b33f/screenShots/MavenAllureFirst.jpg)
 
-  !(https://raw.githubusercontent.com/Nelly1555/Hometask3-Calculator-/b26a5cd08873b7b061c4b20cbf21a159f3e9b33f/screenShots/MavenAllureSecond.jpg)
+  ![mavenleAllure2](https://raw.githubusercontent.com/Nelly1555/Hometask3-Calculator-/b26a5cd08873b7b061c4b20cbf21a159f3e9b33f/screenShots/MavenAllureSecond.jpg)
 
 ### ***Часть 2***
 
@@ -75,9 +75,9 @@
 
   - *Скриншоты с отчётом:*
 
-  !(https://raw.githubusercontent.com/Nelly1555/Hometask3-Calculator-/b26a5cd08873b7b061c4b20cbf21a159f3e9b33f/screenShots/GradleAllureFirst.jpg)
+  ![gradleAllure1](https://raw.githubusercontent.com/Nelly1555/Hometask3-Calculator-/b26a5cd08873b7b061c4b20cbf21a159f3e9b33f/screenShots/GradleAllureFirst.jpg)
 
-  !(https://raw.githubusercontent.com/Nelly1555/Hometask3-Calculator-/b26a5cd08873b7b061c4b20cbf21a159f3e9b33f/screenShots/GradleAllureSecond.jpg)
+  ![gradleAllure2](https://raw.githubusercontent.com/Nelly1555/Hometask3-Calculator-/b26a5cd08873b7b061c4b20cbf21a159f3e9b33f/screenShots/GradleAllureSecond.jpg)
 
 
 
